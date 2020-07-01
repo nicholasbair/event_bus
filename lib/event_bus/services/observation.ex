@@ -69,9 +69,9 @@ defmodule EventBus.Service.Observation do
     case Ets.lookup(table_name(topic), id) do
       [{_, data}] -> data
       _ ->
-        Logger.log(:info, fn ->
-          "[EVENTBUS][OBSERVATION]\s#{topic}.#{id}.ets_fetch_error"
-        end)
+        # Logger.log(:info, fn ->
+        #   "[EVENTBUS][OBSERVATION]\s#{topic}.#{id}.ets_fetch_error"
+        # end)
 
         nil
     end

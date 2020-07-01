@@ -41,9 +41,9 @@ defmodule EventBus.Service.Store do
     case Ets.lookup(table_name(topic), id) do
       [{_, %Event{} = event}] -> event
       _ ->
-        Logger.log(:info, fn ->
-          "[EVENTBUS][STORE]\s#{topic}.#{id}.ets_fetch_error"
-        end)
+        # Logger.log(:info, fn ->
+        #   "[EVENTBUS][STORE]\s#{topic}.#{id}.ets_fetch_error"
+        # end)
 
         nil
     end
